@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Get4Click</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+	<script>
+			var modernBrowser = (
+					'fetch' in window &&
+					'assign' in Object
+			);
+
+			if (!modernBrowser) {
+				var scriptElement = document.createElement('script');
+
+				scriptElement.async = false;
+				scriptElement.src = '/polyfills.bundle.js';
+				document.head.appendChild(scriptElement);
+			}
+	</script>
+</head>
+<body class="page">
+<div class="page__wrapper">
+	<div class="window">
+		<div class="window__panel window__panel_left">
+			<p class="window__panel-title">Cписок новостей</p>
+			<div class="news-list window__news-list js-news-list">
+				<a href="javascript:void(0);" class="news-list__item js-item">Новость</a>
+				<a href="javascript:void(0);" class="news-list__item news-list__item_active js-item">Новость</a>
+			</div>
+			<a href="javascript:void(0);" class="window__panel-btn">Показать ещё</a>
+		</div>
+		<div class="window__panel window__panel_right">
+			<div class="news-detail window__news-detail js-news-detail">
+				<h3 class="news-detail__title js-title">Заголовок</h3>
+				<p class="news-detail__text js-text">Текст новости Текст новости Текст новости Текст новости Текст
+				                                     новости Текст новостиТекст новости Текст новости Текст новости </p>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

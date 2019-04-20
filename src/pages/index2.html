@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get4Click</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script>
+        var modernBrowser = (
+            'fetch' in window &&
+            'assign' in Object
+        );
+
+        if (!modernBrowser) {
+            var scriptElement = document.createElement('script');
+
+            scriptElement.async = false;
+            scriptElement.src = '/polyfills.bundle.js';
+            document.head.appendChild(scriptElement);
+        }
+    </script>
+</head>
+<body class="page">
+<div class="page__wrapper">
+    <header class="header">
+        <div class="header__inner container">
+            <a href="javascript:void(0);" class="header__humburger"></a>
+            <div class="header__logo"></div>
+            <nav class="header__navigation navigation navigation_type_desktop">
+                <ul class="navigation__list">
+                    <li class="navigation__item">
+                        <a href="javascript:void(0);" class="navigation__link">Что такое Get4Click</a>
+                    </li>
+                    <li class="navigation__item">
+                        <a href="javascript:void(0);" class="navigation__link">Рекламодателям</a>
+                    </li>
+                    <li class="navigation__item navigation__item_active">
+                        <a href="javascript:void(0);" class="navigation__link">Трафик-партнерам</a>
+                    </li>
+                    <li class="navigation__item">
+                        <a href="javascript:void(0);" class="navigation__link">Умным покупателям</a>
+                    </li>
+                </ul>
+            </nav>
+            <a href="javascript:void(0);" class="btn-header header__btn-enter btn-header_dark mobile-hide">Вход для партнеров</a>
+            <a href="javascript:void(0);" class="header__btn-lang btn-header btn-header_lang mobile-hide">
+                <div class="btn-header__flag"></div>
+            </a>
+        </div>
+    </header>
+    <section class="welcome js-welcome">
+        <div class="welcome__bg" id="js-welcome-bg"></div>
+        <div class="welcome__inner container">
+            <div class="welcome__top">
+                <div class="welcome__text-block">
+                    <h1 class="welcome__title">Партнерская программа Get4Click:</h1>
+                    <p class="welcome__sub-title">
+                        Приводим активных онлайн-покупателей в e-commerce. Даем дополнительные 7-10% конверсии для
+                        вашего
+                        проекта
+                    </p>
+                </div>
+                <div class="welcome__play-video"></div>
+                <form class="welcome__form form">
+                    <p class="form__title">Отправьте заявку на подключение к Get4Click</p>
+                    <div class="form__input-wrap">
+                        <input type="text" class="form__input" id="email" required>
+                        <label class="form__label" for="email">Ваш e-mail</label>
+                    </div>
+                    <div class="form__input-wrap">
+                        <input type="text" class="form__input" id="name" required>
+                        <label class="form__label" for="name">Ваше имя</label>
+                    </div>
+                    <div class="form__input-wrap">
+                        <input type="text" class="form__input" id="tel" required>
+                        <label class="form__label" for="tel">Ваш телефон</label>
+                    </div>
+                    <div class="btn welcome__form-btn js-btn">
+                        <span class="btn__circle js-btn-effect">
+                        </span>
+                        <a href="javascript:void(0);" class="btn__inner js-btn-inner">
+                          <span class="btn__text">
+                            Присоединиться
+                          </span>
+                        </a>
+                    </div>
+                </form>
+            </div>
+            <div class="welcome__bottom">
+                <div class="welcome__cart">
+                    <p class="welcome__cart-title">Более 30&nbsp;000</p>
+                    <p class="welcome__cart-text">покупателей внутри партнерской сети в день</p>
+                </div>
+                <div class="welcome__cart">
+                    <p class="welcome__cart-title">ТОП-100&#x2060; e-commerce</p>
+                    <p class="welcome__cart-text">ваши партнеры по обмену трафиком</p>
+                </div>
+                <div class="welcome__cart">
+                    <p class="welcome__cart-title">1 день</p>
+                    <p class="welcome__cart-text">нужен для интеграции в партнерскую программу</p>
+                </div>
+                <div class="welcome__cart">
+                    <p class="welcome__cart-title">+7-10% конверсии</p>
+                    <p class="welcome__cart-text">дополнительно для вашего проекта</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section class="job">
+        <div class="job__inner container">
+            <h3 class="job__heading">Как это работает</h3>
+            <div class="job__circle job__circle_1"></div>
+            <div class="job__circle job__circle_2"></div>
+            <div class="job__top js-accordeon">
+                <div class="job__image-block js-accordeon-image-block">
+                    <img class="job__notebook js-accordeon-image" src="../img/notebook.png" alt="">
+                </div>
+                <div class="job__links-block">
+                    <div class="job__accordeon js-accordeon-inner">
+                        <div class="job__dot js-accordeon-dot"></div>
+                        <div class="job__accordeon-item js-accordeon-item" data-img="img/notebook.png">
+                            <a href="javascript:void(0);" class="job__accordeon-title js-accordeon-link">Благодарим за
+                                покупку</a>
+                            <p class="job__accordeon-text js-accordeon-text">Завершая покупку на сайте магазина-партнера
+                                клиент видит
+                                страницу
+                                «Спасибо за заказ» с предложением выбрать подарок за покупку.</p>
+                        </div>
+                        <div class="job__accordeon-item js-accordeon-item" data-img="img/notebook-2.png">
+                            <a href="javascript:void(0);" class="job__accordeon-title js-accordeon-link">Предлагаем
+                                выбрать подарок</a>
+                            <p class="job__accordeon-text js-accordeon-text">Завершая покупку на сайте магазина-партнера
+                                клиент видит
+                                страницу
+                                «Спасибо за заказ» с предложением выбрать подарок за покупку.</p>
+                        </div>
+                        <div class="job__accordeon-item js-accordeon-item" data-img="img/notebook.png">
+                            <a href="javascript:void(0);" class="job__accordeon-title js-accordeon-link">Предлагаем
+                                подписаться на рассылку</a>
+                            <p class="job__accordeon-text js-accordeon-text">Завершая покупку на сайте магазина-партнера
+                                клиент видит
+                                страницу
+                                «Спасибо за заказ» с предложением выбрать подарок за покупку.</p>
+                        </div>
+                        <div class="job__accordeon-item js-accordeon-item " data-img="img/notebook-2.png">
+                            <a href="javascript:void(0);" class="job__accordeon-title js-accordeon-link">Рассказываем
+                                условия получения cкидки</a>
+                            <p class="job__accordeon-text js-accordeon-text">Завершая покупку на сайте магазина-партнера
+                                клиент видит
+                                страницу
+                                «Спасибо за заказ» с предложением выбрать подарок за покупку.</p>
+                        </div>
+                        <div class="job__accordeon-item js-accordeon-item ">
+                            <a href="javascript:void(0);" class="job__accordeon-title js-accordeon-link"
+                               data-img="../img/notebook.png">Встречаем новых клиентов!</a>
+                            <p class="job__accordeon-text js-accordeon-text">Завершая покупку на сайте магазина-партнера
+                                клиент видит
+                                страницу
+                                «Спасибо за заказ» с предложением выбрать подарок за покупку.</p>
+                        </div>
+                    </div>
+                    <div class="btn job__btn js-btn">
+                        <span class="btn__circle js-btn-effect">
+                        </span>
+                        <a href="javascript:void(0);" class="btn__inner js-btn-inner">
+                          <span class="btn__text">
+                            Скачать презентацию
+                          </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="job__bottom">
+                <div class="job__cart">
+                    <div class="job__cart-image">
+                        <img src="../img/job-cart-1.png" alt="">
+                    </div>
+                    <p class="job__cart-title">CPA-формат оплаты</p>
+                </div>
+                <div class="job__cart">
+                    <div class="job__cart-image">
+                        <img src="../img/job-cart-2.png" alt="">
+                    </div>
+                    <p class="job__cart-title">Real-time аналитика</p>
+                </div>
+                <div class="job__cart">
+                    <div class="job__cart-image">
+                        <img src="../img/job-cart-3.png" alt="">
+                    </div>
+                    <p class="job__cart-title">Интуитивно понятный интерфейс</p>
+                </div>
+                <div class="job__cart">
+                    <div class="job__cart-image">
+                        <img src="../img/job-cart-4.png" alt="">
+                    </div>
+                    <p class="job__cart-title">Увеличение LTV</p>
+                </div>
+                <div class="job__cart">
+                    <div class="job__cart-image">
+                        <img src="../img/job-cart-5.png" alt="">
+                    </div>
+                    <p class="job__cart-title">Возможность кастомизации</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="tasks">
+        <div class="tasks__edge">
+            <img src="../img/job-bottom-edge.png" alt="">
+        </div>
+        <div class="tasks__inner container">
+            <h3 class="tasks__title">Готовые решения для главных задач в e-commerce
+            </h3>
+            <p class="tasks__subtitle">Одним кликом вы закрываете все важнейшие блоки интернет-маркетинга в сфере
+                электронной торговли.</p>
+            <div class="tasks__table">
+                <div class="tasks__item tasks__item_wide">
+                    <p class="tasks__item-title">Клиентская рассылка Get4Click</p>
+                    <p class="tasks__item-text">Ежедневно база рассылки Get4Click пополняется умными покупателями,
+                        которые следят за акциями и скидками. Они готовы приступить к покупкам прямо сейчас.
+                        Мы можем рассказать им о вас в 2-х форматах: дайджест скидок (3-5 партнеров в рассылке) или
+                        создать индивидуальную брендированную рассылку с вашими предложениями</p>
+                    <a href="javascript:void(0);" class="tasks__item-link link">Заказать рассылку</a>
+                </div>
+                <div class="tasks__item">
+                    <p class="tasks__item-title">Рост
+                        продаж</p>
+                    <p class="tasks__item-text">Участники партнерской программы получают доступ к аудитории, которая
+                        умеет и любит покупать онлайн. Предоставляя таким клиентам индивидуальную скидку вы кратно
+                        увеличиваете возможность будущей покупки именно у вас.
+                    </p>
+                    <a href="javascript:void(0);" class="tasks__item-link link">Присоединиться</a>
+                </div>
+                <div class="tasks__item">
+                    <p class="tasks__item-title">Новые лояльные клиенты для вашей базы e-mail</p>
+                    <p class="tasks__item-text">Сервис Get4Click предлагает клиенту подписаться на новости в единственно
+                        правильный момент, когда клиент видит весь спектр открывающихся скидочных возможностей. От
+                        такого сложно отказаться! CTR нашей базы более 30%.</p>
+                    <a href="javascript:void(0);" class="tasks__item-link link">Подключить опцию</a>
+                </div>
+                <div class="tasks__item">
+                    <p class="tasks__item-title">Ваша личная программа мотивации покупателей</p>
+                    <p class="tasks__item-text">Премируйте своих клиентов скидками от партнеров и предоставляйте скидки
+                        клиентам партнерской сети. Встраивание программы лояльности в бизнес еще никогда не было таким
+                        простым, а конверсия такой высокой.</p>
+                    <a href="javascript:void(0);" class="tasks__item-link link">Настроить программу</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="partners">
+        <div class="partners__inner container">
+            <h3 class="partners__title">Трафик-партнеры</h3>
+            <p class="partners__subtitle">Офферы рекламодателей Get4Click размещают сайты ТОП-100 e-commerce, банки,
+                платежные системы, операторы связи и др. Мы привлекаем клиентов, которые хотят и умеют покупать
+                онлайн.</p>
+            <div class="partners__logo-slider js-partners-slider">
+                <div class="partners__logo-slide">
+                    <img class="partners__logo" src="../img/partner-logo-1.png" alt="">
+                </div>
+                <div class="partners__logo-slide">
+                    <img class="partners__logo" src="../img/partner-logo-2.png" alt="">
+                </div>
+                <div class="partners__logo-slide">
+                    <img class="partners__logo" src="../img/partner-logo-3.png" alt="">
+                </div>
+                <div class="partners__logo-slide">
+                    <img class="partners__logo" src="../img/partner-logo-4.png" alt="">
+                </div>
+                <div class="partners__logo-slide">
+                    <img class="partners__logo" src="../img/partner-logo-5.png" alt="">
+                </div>
+                <div class="partners__logo-slide">
+                    <img class="partners__logo" src="../img/partner-logo-6.png" alt="">
+                </div>
+                <div class="partners__logo-slide">
+                    <img class="partners__logo" src="../img/partner-logo-7.png" alt="">
+                </div>
+                <div class="partners__logo-slide">
+                    <img class="partners__logo" src="../img/partner-logo-1.png" alt="">
+                </div>
+                <div class="partners__logo-slide">
+                    <img class="partners__logo" src="../img/partner-logo-2.png" alt="">
+                </div>
+                <div class="partners__logo-slide">
+                    <img class="partners__logo" src="../img/partner-logo-3.png" alt="">
+                </div>
+                <div class="partners__logo-slide">
+                    <img class="partners__logo" src="../img/partner-logo-4.png" alt="">
+                </div>
+                <div class="partners__logo-slide">
+                    <img class="partners__logo" src="../img/partner-logo-5.png" alt="">
+                </div>
+                <div class="partners__logo-slide">
+                    <img class="partners__logo" src="../img/partner-logo-6.png" alt="">
+                </div>
+                <div class="partners__logo-slide">
+                    <img class="partners__logo" src="../img/partner-logo-7.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="histories js-histories">
+        <div class="histories__inner container">
+            <h3 class="histories__title">Истории успеха Get4Click</h3>
+            <div class="histories__slider js-slider">
+                <div class="histories__slide js-slide">
+                    <div class="histories__slide-inner">
+                        <div class="histories__slider-description">
+                            <p class="histories__slider-number">Кейс #1</p>
+                            <p class="histories__slider-title">Заголовок кейса</p>
+                            <p class="histories__slider-description-text">Офферы рекламодателей Get4Click размещают
+                                сайты
+                                ТОП-100 e-commerce, банки, платежные системы, операторы связи и др. Мы привлекаем
+                                клиентов,
+                                которые хотят и умеют покупать онлайн.
+                            </p>
+                            <div class="histories__slider-cart-table">
+                                <div class="histories__slider-cart">
+                                    <p class="histories__slider-cart-title">+1.2%</p>
+                                    <p class="histories__slider-cart-subtitle">CR</p>
+                                </div>
+                                <div class="histories__slider-cart">
+                                    <p class="histories__slider-cart-title">+180%</p>
+                                    <p class="histories__slider-cart-subtitle">ROMI</p>
+                                </div>
+                            </div>
+                            <a href="javascript:void(0);" class="histories__slider-link link">Читать полностью</a>
+                        </div>
+                        <div class="histories__slider-image-block">
+                            <img src="../img/table.jpg" class="histories__slider-img" alt="Истории успеха Get4Click">
+                        </div>
+                    </div>
+                </div>
+                <div class="histories__slide js-slide">
+                    <div class="histories__slide-inner">
+                        <div class="histories__slider-description">
+                            <p class="histories__slider-number">Кейс #1</p>
+                            <p class="histories__slider-title">Заголовок кейса</p>
+                            <p class="histories__slider-description-text">Офферы рекламодателей Get4Click размещают
+                                сайты
+                                ТОП-100 e-commerce, банки, платежные системы, операторы связи и др. Мы привлекаем
+                                клиентов,
+                                которые хотят и умеют покупать онлайн.
+                            </p>
+                            <div class="histories__slider-cart-table">
+                                <div class="histories__slider-cart">
+                                    <p class="histories__slider-cart-title">+1.2%</p>
+                                    <p class="histories__slider-cart-subtitle">CR</p>
+                                </div>
+                                <div class="histories__slider-cart">
+                                    <p class="histories__slider-cart-title">+180%</p>
+                                    <p class="histories__slider-cart-subtitle">ROMI</p>
+                                </div>
+                            </div>
+                            <a href="javascript:void(0);" class="histories__slider-link link">Читать полностью</a>
+                        </div>
+                        <div class="histories__slider-image-block">
+                            <img src="../img/table.jpg" class="histories__slider-img" alt="Истории успеха Get4Click">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="comments js-comments">
+        <div class="comments__inner container">
+            <h3 class="comments__title">Отзывы</h3>
+            <p class="comments__subtitle">Каждый день тысячи команд и специалистов пользуются нашим сервисом, чтобы
+                создавать свои email- и sms-рассылки быстро и эффективно.</p>
+            <div class="comments__slider js-slider">
+                <div class="comments__slide js-slide">
+                    <div class="comments__slide-inner">
+                        <div class="comments__slide-image">
+                            <img src="../img/comments.png" alt="" class="comments__img">
+                        </div>
+                        <p class="comments__slide-title">Любовь Рыжкова</p>
+                        <p class="comments__slide-subtitle">Digital & E-commerce Director Yves Rocher Russia</p>
+                        <p class="comments__slide-text">Get4Click - надежный и лояльный партнер. За первый год
+                            сотрудничества с ними, мы смогли не только значительно увеличить продажи с канала, но обрели
+                            стабильный источник новых клиентов. Участие в программе Get4Click стало еще одним интересным
+                            для наших покупателей пунктом в программе лояльности Yves-Rocher.</p>
+                    </div>
+                </div>
+                <div class="comments__slide js-slide">
+                    <div class="comments__slide-inner">
+                        <div class="comments__slide-image">
+                            <img src="../img/comments.png" alt="" class="comments__img">
+                        </div>
+                        <p class="comments__slide-title">Любовь Рыжкова</p>
+                        <p class="comments__slide-subtitle">Digital & E-commerce Director Yves Rocher Russia</p>
+                        <p class="comments__slide-text">Get4Click - надежный и лояльный партнер. За первый год
+                            сотрудничества с ними, мы смогли не только значительно увеличить продажи с канала, но обрели
+                            стабильный источник новых клиентов. Участие в программе Get4Click стало еще одним интересным
+                            для наших покупателей пунктом в программе лояльности Yves-Rocher.</p>
+                    </div>
+                </div>
+                <div class="comments__slide js-slide">
+                    <div class="comments__slide-inner">
+                        <div class="comments__slide-image">
+                            <img src="../img/comments.png" alt="" class="comments__img">
+                        </div>
+                        <p class="comments__slide-title">Любовь Рыжкова</p>
+                        <p class="comments__slide-subtitle">Digital & E-commerce Director Yves Rocher Russia</p>
+                        <p class="comments__slide-text">Get4Click - надежный и лояльный партнер. За первый год
+                            сотрудничества с ними, мы смогли не только значительно увеличить продажи с канала, но обрели
+                            стабильный источник новых клиентов. Участие в программе Get4Click стало еще одним интересным
+                            для наших покупателей пунктом в программе лояльности Yves-Rocher.</p>
+                    </div>
+                </div>
+                <div class="comments__slide js-slide">
+                    <div class="comments__slide-inner">
+                        <div class="comments__slide-image">
+                            <img src="../img/comments.png" alt="" class="comments__img">
+                        </div>
+                        <p class="comments__slide-title">Любовь Рыжкова</p>
+                        <p class="comments__slide-subtitle">Digital & E-commerce Director Yves Rocher Russia</p>
+                        <p class="comments__slide-text">Get4Click - надежный и лояльный партнер. За первый год
+                            сотрудничества с ними, мы смогли не только значительно увеличить продажи с канала, но обрели
+                            стабильный источник новых клиентов. Участие в программе Get4Click стало еще одним интересным
+                            для наших покупателей пунктом в программе лояльности Yves-Rocher.</p>
+                    </div>
+                </div>
+                <div class="comments__slide js-slide">
+                    <div class="comments__slide-inner">
+                        <div class="comments__slide-image">
+                            <img src="../img/comments.png" alt="" class="comments__img">
+                        </div>
+                        <p class="comments__slide-title">Любовь Рыжкова</p>
+                        <p class="comments__slide-subtitle">Digital & E-commerce Director Yves Rocher Russia</p>
+                        <p class="comments__slide-text">Get4Click - надежный и лояльный партнер. За первый год
+                            сотрудничества с ними, мы смогли не только значительно увеличить продажи с канала, но обрели
+                            стабильный источник новых клиентов. Участие в программе Get4Click стало еще одним интересным
+                            для наших покупателей пунктом в программе лояльности Yves-Rocher.</p>
+                    </div>
+                </div>
+                <div class="comments__slide js-slide">
+                    <div class="comments__slide-inner">
+                        <div class="comments__slide-image">
+                            <img src="../img/comments.png" alt="" class="comments__img">
+                        </div>
+                        <p class="comments__slide-title">Любовь Рыжкова</p>
+                        <p class="comments__slide-subtitle">Digital & E-commerce Director Yves Rocher Russia</p>
+                        <p class="comments__slide-text">Get4Click - надежный и лояльный партнер. За первый год
+                            сотрудничества с ними, мы смогли не только значительно увеличить продажи с канала, но обрели
+                            стабильный источник новых клиентов. Участие в программе Get4Click стало еще одним интересным
+                            для наших покупателей пунктом в программе лояльности Yves-Rocher.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="request">
+        <div class="request__inner container">
+            <h3 class="request__title">Разместить свой оффер в Get4Click</h3>
+            <div class="request__form-wrap">
+                <form class="request__form form">
+                    <p class="form__title">Отправьте заявку на подключение к Get4Click</p>
+                    <div class="form__input-wrap">
+                        <input type="text" class="form__input" id="remail" required>
+                        <label class="form__label" for="remail">Ваш e-mail</label>
+                    </div>
+                    <div class="form__input-wrap">
+                        <input type="text" class="form__input" id="rname" required>
+                        <label class="form__label" for="rname">Ваше имя</label>
+                    </div>
+                    <div class="form__input-wrap">
+                        <input type="text" class="form__input" id="rtel" required>
+                        <label class="form__label" for="rtel">Ваш телефон</label>
+                    </div>
+                    <div class="form__input-wrap">
+                        <input type="text" class="form__input" id="site" required>
+                        <label class="form__label" for="site">Адрес сайта</label>
+                    </div>
+                    <div class="form__input-wrap">
+                        <input type="text" class="form__input" id="comment" required>
+                        <label class="form__label" for="comment">Комментарии</label>
+                    </div>
+                    <div class="btn welcome__form-btn js-btn">
+                        <span class="btn__circle js-btn-effect">
+                        </span>
+                        <a href="javascript:void(0);" class="btn__inner js-btn-inner">
+                          <span class="btn__text">
+                            Отправить
+                          </span>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer__top">
+            <div class="footer__top-inner container">
+                <div class="footer__logo"></div>
+                <nav class="navigation navigation_type_desktop">
+                    <ul class="navigation__list footer__menu-list">
+                        <li class="navigation__item">
+                            <a href="javascript:void(0);" class="navigation__link">Что такое Get4Click</a>
+                        </li>
+                        <li class="navigation__item">
+                            <a href="javascript:void(0);" class="navigation__link">Рекламодателям</a>
+                        </li>
+                        <li class="navigation__item navigation__item_active">
+                            <a href="javascript:void(0);" class="navigation__link">Трафик-партнерам</a>
+                        </li>
+                        <li class="navigation__item">
+                            <a href="javascript:void(0);" class="navigation__link">Умным покупателям</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="footer__bottom-inner container">
+                <div class="footer__block footer__block_left">
+                    <span class="footer__dark-text">Свяжитесь с нами:</span>
+                    <a href="mailto:hello@get4click.ru" class="footer__light-text footer__link">hello@get4click.ru</a>
+                </div>
+                <div class="footer__block footer__block_center">
+                    <a href="javascript:void(0);" class="footer__light-text footer__link">Политика обработки ПД</a>
+                    <span class="footer__dark-text"> | </span>
+                    <a href="javascript:void(0);" class="footer__light-text footer__link"> Договор публичной оферты</a>
+                </div>
+                <div class="footer__block footer__block_right">
+                    <a href="https://letsrock.pro" class="letsrock-logo"></a>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    <div class="additional-img" style="display: none">
+        <img src="../img/notebook.png" alt="">
+        <img src="../img/notebook-2.png" alt="">
+    </div>
+</div>
+</body>
+</html>

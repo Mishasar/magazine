@@ -1,0 +1,38 @@
+.window {
+	display    : flex;
+	.size(800px, 600px);
+	box-shadow : 1px 1px 10px 0px @black;
+	overflow   : hidden;
+
+	&__panel {
+
+		&_left {
+			background     : rgba(243, 243, 253, 0.71);
+			flex           : 1 1 0;
+			display        : flex;
+			flex-direction : column;
+		}
+
+		&_right {
+			background : #f3f3fd;
+			flex       : 2 1 0;
+			padding    : 20px;
+			box-shadow : -8px 0 15px 17px rgba(77, 85, 95, 0.09);
+		}
+	}
+
+	&__panel-title {
+		font-size : 22px;
+		margin    : 20px;
+	}
+
+	&__panel-btn {
+		margin-top      : auto;
+		color           : @black;
+		height          : 60px;
+		display         : flex;
+		justify-content : center;
+		align-items     : center;
+
+	}
+}

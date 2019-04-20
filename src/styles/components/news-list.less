@@ -1,0 +1,25 @@
+.news-list {
+	display        : flex;
+	flex-direction : column;
+
+	&__item {
+		padding         : 10px 20px;
+		margin-bottom   : 10px;
+		font-size       : 16px;
+		border-left     : 4px solid transparent;
+		transition      : border-left .5s ease, color 5s ease;
+		color           : @black;
+		text-decoration : none;
+		font-weight     : 200;
+
+
+		&_active {
+			border-left-color : @activeColor;
+		}
+
+		&:hover {
+			color             : @activeColor;
+			border-left-color : rgba(62, 140, 152, 0.78);
+		}
+	}
+}
